@@ -36,21 +36,21 @@ public class Application extends SpringBootServletInitializer {
 		@Override
 		public void run(String... args) throws Exception {
 
-			log.info(".... Fetching entires");
-
-			log.info("patient-1234 selected");
-			log.info("entry-1234 -->" + domainRepository.getEntriesFromBp("1234"));
-			log.info("entry-1234 -->" + domainRepository.getEntriesFromBp("1234"));
-
-			log.info("patient-2345 selected");
-			domainRepository.resetCache();
-			log.info("entry-2345 -->" + domainRepository.getEntriesFromBp("2345"));
-
-			log.info("patient-2345 selected");
-			domainRepository.resetCache();
-			log.info("entry-2345 -->" + domainRepository.getEntriesFromBp("2345"));
-			domainRepository.resetCache();
-			log.info("entry-1234 -->" + domainRepository.getEntriesFromBp("1234"));
+//			log.info(".... Fetching entires");s
+//
+//			log.info("patient-1234 selected");
+//			log.info("entry-1234 -->" + domainRepository.getEntriesFromBp("1234"));
+//			log.info("entry-1234 -->" + domainRepository.getEntriesFromBp("1234"));
+//
+//			log.info("patient-2345 selected");
+//			domainRepository.resetCache();
+//			log.info("entry-2345 -->" + domainRepository.getEntriesFromBp("2345"));
+//
+//			log.info("patient-2345 selected");
+//			domainRepository.resetCache();
+//			log.info("entry-2345 -->" + domainRepository.getEntriesFromBp("2345"));
+//			domainRepository.resetCache();
+//			log.info("entry-1234 -->" + domainRepository.getEntriesFromBp("1234"));
 		}
 	}
 

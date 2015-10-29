@@ -7,6 +7,9 @@
 
 <body>
 	<h1>${message}</h1>
+
+	<p>Patient Selected: ${patient}</p>
+	<input type="submit" name="/getPatient" value="Select Patient" />
 </body>
 
 </html>
