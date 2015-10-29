@@ -2,6 +2,7 @@ package com.example;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
@@ -12,15 +13,15 @@ import java.util.HashMap;
 public class DomainRepositoryImpl implements DomainRepository {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
+    @Value("${cacheConfig.bpRequestDataCache}")
+    private static final String bpRequestDataCache = "entries";
+
     @Override
-    @Cacheable("entries")
-    public HashMap<String, String> getEntriesFromBp(String id) {
+    @Cacheable(value=bpRequestDataCache)
+    public String getEntriesFromBp(String id) {
         log.info("Getting Entries for "+id+"....");
         simulateSlowService();
-        HashMap<String, String> entries = new HashMap<String, String>();
-        entries.put("5454", "test content");
-        entries.put("3213", "test content");
-        return entries;
+        return id+"=patientContent";
     }
 
     @Override

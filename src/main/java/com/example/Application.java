@@ -13,9 +13,8 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-
+//@EnableCaching
 @SpringBootApplication
-@EnableCaching
 public class Application extends SpringBootServletInitializer {
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
@@ -54,8 +53,8 @@ public class Application extends SpringBootServletInitializer {
 		}
 	}
 
-	@Bean
-	public CacheManager cacheManager() {
-		return new ConcurrentMapCacheManager("entries");
-	}
+//	@Bean
+//	public CacheManager cacheManager() {
+//		return new ConcurrentMapCacheManager("entries");
+//	}
 }

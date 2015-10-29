@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>spring-boot-cache-test-example</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+	<h1 th:text="${message}"></h1>
+	<p>Patient Selected:</p><p th:text="${patientId}"/>
+
+	<form action="#" th:action="@{/}" th:object="${patient}" method="post">
+		<p>Id: <input type="text" th:field="*{id}" /></p>
+		<p><input type="submit" value="Submit" /></p>
+	</form>
+</body>
+</html>
