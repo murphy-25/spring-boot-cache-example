@@ -6,9 +6,9 @@
 </head>
 <body>
 	<h1 th:text="${message}"></h1>
-	<p>Patient Selected:</p><p th:text="${patientId}"/>
+	<p>Patient Selected:</p><p th:text="${userId}"/>
 
-	<form action="#" th:action="@{/}" th:object="${patient}" method="post">
+	<form action="#" th:action="@{/}" th:object="${user}" method="post">
 		<p>Id: <input type="text" th:field="*{id}" /></p>
 		<p><input type="submit" value="Submit" /></p>
 	</form>

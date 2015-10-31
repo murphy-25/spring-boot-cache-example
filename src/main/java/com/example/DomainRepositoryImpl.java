@@ -7,31 +7,32 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-
 @Component
 public class DomainRepositoryImpl implements DomainRepository {
-    private static final Logger log = LoggerFactory.getLogger(Application.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);
 
-    @Value("${cacheConfig.bpRequestDataCache}")
-    private static final String bpRequestDataCache = "entries";
+    @Value("${cache.config.request.data.cache.name}")
+    private static final String requestDataCacheName = "entries";
 
     @Override
-    @Cacheable(value=bpRequestDataCache)
+    @Cacheable(value=requestDataCacheName)
     public String getEntriesFromBp(String id) {
-        log.info("Getting Entries for "+id+"....");
+
+        LOGGER.info("Getting Entries for " + id + "....");
         simulateSlowService();
-        return id+"=patientContent";
+        return id+"=userContent";
     }
 
     @Override
     @CacheEvict(value = "entries", allEntries = true)
     public void resetCache() {
-        log.info("Removing elements from the cache ......");
+
+        LOGGER.info("Removing all elements from cache ......");
         //intentionally blank
     }
 
     private void simulateSlowService() {
+
         try {
             long time = 5000L;
             Thread.sleep(time);
